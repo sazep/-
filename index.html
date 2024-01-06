@@ -2,95 +2,129 @@
 <head>
     <title>Сучасні Інновації</title>
     <style>
-        body {
-            font-family: 'Pacifico', cursive;
-            font-size:130%;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
+body {
+    font-family: 'Pacifico', cursive;
+    font-size: 130%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden; /* есле x крч прячет нижний скрол(влево вправо) есле y (верх вниз) */
+}
 
-        header {
-            background-color: #231f20;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
+header {
+    background-color: #231f20;
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+}
 
-        #logo {
-            max-width: 10%;
-            max-height: 10%;
-        }
+/* Стили для вертикальной полосы прокрутки (признаюсь нашел в интернете подругому незнаю как найти их было, но поменял под себя) */
+body::-webkit-scrollbar {
+    width: 12px;
+}
 
-        nav {
-            background-color: #231f20;
-            padding: 10px;
-            text-align: center;
-        }
+body::-webkit-scrollbar-track {
+    background: #e3e3e3;
+}
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
+body::-webkit-scrollbar-thumb {
+    background-color: #231f20;
+    border: 3px solid #231f20;
+}
 
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            text-align: justify;
-        }
+#logo {
+    max-width: 10%;
+    max-height: 10%;
+}
 
-        h2 {
-            color: #231f20;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #231f20;
+    padding: 10px;
+    text-align: center;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        table {
-            font-size:100%;
-            width: 100%;
-            border-collapse: collapse;
-
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        footer {
-            background-color: #231f20;
-            color: #fff;
-            font-size:120%;
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .contact-info {
-            margin-top: 10px;
-            text-align: center;
-        }
+nav a {
+    color: #fff;
+    text-decoration: none;/*запомни это чтоб убрать подчеркивание*/
+    margin: 0 10px;
+    font-weight: bold;
+}
 
 
+nav a:hover {
+    background-color: #000;
+    color: #fff;
+}
 
-        .original-price {
-            font-size:70%;
-            color: #999;
-            text-decoration: line-through;
-        }
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+h2 {
+    color: #231f20;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+table {
+    font-size: 100%;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+footer {
+    background-color: #231f20;
+    color: #fff;
+    font-size: 120%;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.contact-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.original-price {
+    font-size: 70%;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.review {
+    display: flex; /* делает гибкими дочерние елементы и позволяет размещать их (вертикально или горизонтально) как я понял*/
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review img {
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+
     </style>
 </head>
 
@@ -104,6 +138,7 @@
         <a href="#about">Про нас</a>
         <a href="#services">Послуги</a>
         <a href="#pricing">Ціни</a>
+        <a href="#reviews">Відгуки</a>
         <a href="#contact">Контакти</a>
     </nav>
 
@@ -136,37 +171,70 @@
             <tbody>
                 <tr>
                     <td>Розробка веб-сайтів</td>
-                    <td><div>$1000</div>
-                    <div> <span class="original-price">$1200</span> </div></td>
+                    <td>
+                        <div>$1000</div>
+                        <div><span class="original-price">$1200</span></div>
+                    </td>
                     <td>SEO оптимізація - $200</td>
                 </tr>
                 <tr>
                     <td>Мобільні додатки</td>
-                    <td><div>$1500</div>
-                    <div><span class="original-price">$1800</span></div></td>
+                    <td>
+                        <div>$1500</div>
+                        <div><span class="original-price">$1800</span></div>
+                    </td>
                     <td>Cross-platform - $300</td>
                 </tr>
                 <tr>
                     <td>Інтеграція систем</td>
-                    <td><div>$1200</div>
-                    <div><span class="original-price">$1500</span></div></td>
+                    <td>
+                        <div>$1200</div>
+                        <div><span class="original-price">$1500</span></div>
+                    </td>
                     <td>Cloud Solutions - $250</td>
                 </tr>
                 <tr>
                     <td>Штучний інтелект</td>
-                    <td><div>$2000</div>
-                    <div><span class="original-price">$2500</span></div></td>
+                    <td>
+                        <div>$2000</div>
+                        <div><span class="original-price">$2500</span></div>
+                    </td>
                     <td>Machine Learning - $500</td>
                 </tr>
                 <tr>
                     <td>Консультації</td>
-                    <td><div>$80/год</div>
-                    <div><span class="original-price">$100/год</span></div></td>
+                    <td>
+                        <div>$80/год</div>
+                        <div><span class="original-price">$100/год</span></div>
+                    </td>
                     <td>Індивідуальний підхід - $120/год</td>
                 </tr>
             </tbody>
         </table>
     </section>
+
+<section id="reviews">
+    <h2>Відгуки</h2>
+    <div id="existing-reviews">
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Аватар">
+            <div class="review-content">
+                <p><strong>Іван Іванов</strong></p>
+                <p>Відмінна компанія, виконали роботу вчасно та якісно. Рекомендую!</p>
+                <p class="review-metadata">Оцінка: ★★★★★ | Опубліковано: 2024-01-06</p>
+            </div>
+        </div>
+        <div class="review">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Аватар">
+            <div class="review-content">
+                <p><strong>Марина Петрова</strong></p>
+                <p>Співпрацюємо із "Сучасні Інновації" вже рік. Дуже задоволені результатами та професіоналізмом команди. Індивідуальний підхід на вищому рівні так ще й знижки віднедавна.</p>
+                <p class="review-metadata">Оцінка: ★★★★☆ | Опубліковано: 2023-09-27</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <footer id="contact">
         "Сучасні Інновації" - ваш надійний партнер у світі технологій.
@@ -183,6 +251,7 @@
             <br>
             Електронна пошта: funnyemail@gmail.com
         </div>
+        <p>&copy; 2023 Сучасні Інновації </p>
     </footer>
 </body>
 
