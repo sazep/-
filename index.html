@@ -1,7 +1,6 @@
 <html>
-<head>
-    <title>Сучасні Інновації</title>
-    <style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
 body {
     font-family: 'Pacifico', cursive;
     font-size: 130%;
@@ -125,7 +124,65 @@ footer {
 }
 
 
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service-card {
+    flex: 0 1 calc(15%);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.service-price {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.buy-button {
+    background-color: #231f20;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.review-form {
+    margin-top: 20px;
+}
+
+.review-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    background-color: #231f20;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
     </style>
+<head>
+    <title>Сучасні Інновації</title>
 </head>
 
 <body>
@@ -137,7 +194,6 @@ footer {
     <nav>
         <a href="#about">Про нас</a>
         <a href="#services">Послуги</a>
-        <a href="#pricing">Ціни</a>
         <a href="#reviews">Відгуки</a>
         <a href="#contact">Контакти</a>
     </nav>
@@ -147,72 +203,52 @@ footer {
         <p>"Сучасні Інновації" - це технологічно орієнтована компанія, яка спеціалізується на наданні передових рішень для бізнесу та приватних клієнтів. Наша мета - забезпечити високоякісні послуги та продукти, що відповідають найсучаснішим тенденціям у світі технологій.</p>
     </section>
 
+
     <section id="services">
-        <h2>Послуги</h2>
-        <ul>
-            <li>Розробка веб-сайтів</li>
-            <li>Мобільні додатки</li>
-            <li>Інтеграція систем</li>
-            <li>Штучний інтелект та аналітика даних</li>
-            <li>Консультації з інноваційних рішень</li>
-        </ul>
+        <div style="width:100%;height:20%;">
+            <h2>Послуги</h2>
+        </div>
+        <div class="service-card">
+            <div class="service-name">Розробка веб-сайтів</div>
+            <div class="service-price">
+                <div>$1000</div>
+                <div><span class="original-price">$1200</span></div>
+            </div>
+            <button class="buy-button">Купити</button>
+        </div>
+        <div class="service-card">
+            <div class="service-name">Мобільні додатки</div>
+            <div class="service-price">
+                <div>$1000</div>
+                <div><span class="original-price">$1500</span></div>
+            </div>
+            <button class="buy-button">Купити</button>
+        </div>
+        <div class="service-card">
+            <div class="service-name">Інтеграція систем</div>
+            <div class="service-price">
+                <div>$1200</div>
+                <div><span class="original-price">$1500</span></div>
+            </div>
+            <button class="buy-button">Купити</button>
+        </div>
+        <div class="service-card">
+            <div class="service-name">Штучний інтелект</div>
+            <div class="service-price">
+                <div>$2000</div>
+                <div><span class="original-price">$2500</span></div>
+            </div>
+            <button class="buy-button">Купити</button>
+        </div>
+        <div class="service-card">
+            <div class="service-name">Консультації</div>
+            <div class="service-price">
+                <div>$100/год</div>
+                <div><span class="original-price">$120/год</span></div>
+            </div>
+            <button class="buy-button">Купити</button>
+        </div>
     </section>
-
-    <section id="pricing">
-        <h2>Таблиця Цін</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Послуга</th>
-                    <th>Базова Ціна ($)</th>
-                    <th>Додаткові Опції</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Розробка веб-сайтів</td>
-                    <td>
-                        <div>$1000</div>
-                        <div><span class="original-price">$1200</span></div>
-                    </td>
-                    <td>SEO оптимізація - $200</td>
-                </tr>
-                <tr>
-                    <td>Мобільні додатки</td>
-                    <td>
-                        <div>$1500</div>
-                        <div><span class="original-price">$1800</span></div>
-                    </td>
-                    <td>Cross-platform - $300</td>
-                </tr>
-                <tr>
-                    <td>Інтеграція систем</td>
-                    <td>
-                        <div>$1200</div>
-                        <div><span class="original-price">$1500</span></div>
-                    </td>
-                    <td>Cloud Solutions - $250</td>
-                </tr>
-                <tr>
-                    <td>Штучний інтелект</td>
-                    <td>
-                        <div>$2000</div>
-                        <div><span class="original-price">$2500</span></div>
-                    </td>
-                    <td>Machine Learning - $500</td>
-                </tr>
-                <tr>
-                    <td>Консультації</td>
-                    <td>
-                        <div>$80/год</div>
-                        <div><span class="original-price">$100/год</span></div>
-                    </td>
-                    <td>Індивідуальний підхід - $120/год</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
 <section id="reviews">
     <h2>Відгуки</h2>
     <div id="existing-reviews">
@@ -230,18 +266,20 @@ footer {
                 <p><strong>Марина Петрова</strong></p>
                 <p>Співпрацюємо із "Сучасні Інновації" вже рік. Дуже задоволені результатами та професіоналізмом команди. Індивідуальний підхід на вищому рівні так ще й знижки віднедавна.</p>
                 <p class="review-metadata">Оцінка: ★★★★☆ | Опубліковано: 2023-09-27</p>
+
+                <div class="review-form">
+                    <h2>Залишти відгук</h2>
+                    <input type="text" class="review-input" placeholder="Ім'я">
+                    <textarea class="review-input" placeholder="Ваш відгук"></textarea>
+                    <button class="submit-button">Відправити</button>
+                </div>
             </div>
         </div>
     </div>
 </section>
+</body>
 
-
-    <footer id="contact">
-        "Сучасні Інновації" - ваш надійний партнер у світі технологій.
-        <br>
-        З нами ваш бізнес завжди буде на крок вперед!
-        <br>
-        Зв'яжіться з нами сьогодні для початку вашого інноваційного шляху.
+<footer id="contact">
         <div class="contact-info">
             Контактна Інформація:
             <br>
@@ -252,7 +290,6 @@ footer {
             Електронна пошта: funnyemail@gmail.com
         </div>
         <p>&copy; 2023 Сучасні Інновації </p>
-    </footer>
-</body>
+</footer>
 
 </html>
