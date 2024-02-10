@@ -1,206 +1,187 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
-body {
-    font-family: 'Pacifico', cursive;
-    font-size: 130%;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    overflow-x: hidden; /* есле x крч прячет нижний скрол(влево вправо) есле y (верх вниз) */
-}
+    body {
+        font-family: 'Pacifico', cursive;
+        font-size: 130%;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        overflow-x: hidden; /* есле x крч прячет нижний скрол(влево вправо) есле y (верх вниз) */
+    }
 
-header {
-    background-color: #231f20;
-    color: #fff;
-    text-align: center;
-    padding: 30px 10px;
-}
+    header {
+        background-color: #231f20;
+        color: #fff;
+        text-align: center;
+        padding: 30px 10px;
+    }
+    /* Стили для вертикальной полосы прокрутки (признаюсь нашел в интернете подругому незнаю как найти их было, но поменял под себя) */
+    body::-webkit-scrollbar {
+        width: 12px;
+    }
 
-/* Стили для вертикальной полосы прокрутки (признаюсь нашел в интернете подругому незнаю как найти их было, но поменял под себя) */
-body::-webkit-scrollbar {
-    width: 12px;
-}
+    body::-webkit-scrollbar-track {
+        background: #e3e3e3;
+    }
 
-body::-webkit-scrollbar-track {
-    background: #e3e3e3;
-}
+    body::-webkit-scrollbar-thumb {
+        background-color: #231f20;
+        border: 3px solid #231f20;
+    }
 
-body::-webkit-scrollbar-thumb {
-    background-color: #231f20;
-    border: 3px solid #231f20;
-}
+    #logo {
+        max-width: 10%;
+        max-height: 10%;
+    }
 
-#logo {
-    max-width: 10%;
-    max-height: 10%;
-}
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #231f20;
+        padding: 10px;
+        text-align: center;
+    }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #231f20;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;/*запомни это чтоб убрать подчеркивание*/
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-
-nav a:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    text-align: justify;
-}
-
-h2 {
-    color: #231f20;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-table {
-    font-size: 100%;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-footer {
-    background-color: #231f20;
-    color: #fff;
-    font-size: 120%;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.contact-info {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.original-price {
-    font-size: 70%;
-    color: #999;
-    text-decoration: line-through;
-}
-
-.review {
-    display: flex; /* делает гибкими дочерние елементы и позволяет размещать их (вертикально или горизонтально) как я понял*/
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.review img {
-    border-radius: 50%;
-    margin-right: 15px;
-}
+    nav a {
+        color: #fff;
+        text-decoration: none;/*запомни это чтоб убрать подчеркивание*/
+        margin: 0 10px;
+        font-weight: bold;
+    }
 
 
-#services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+    nav a:hover {
+        background-color: #000;
+        color: #fff;
+    }
 
-.service-card {
-    flex: 0 1 calc(15%);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s;
-}
+    section {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        text-align: justify;
+    }
 
-.service-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
+    h2 {
+        color: #231f20;
+    }
 
-.service-card:hover {
-    transform: scale(1.05);
-}
+    footer {
+        background-color: #231f20;
+        color: #fff;
+        font-size: 120%;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        margin-top: 20px;
+        position: absolute;
+    }
 
-.service-name {
-    font-size: 18px;
-    font-weight: bold;
-}
+    .contact-info {
+        margin-top: 10px;
+        text-align: center;
+    }
 
-.service-price {
-    font-size: 16px;
-    margin-top: 10px;
-}
+    .original-price {
+        font-size: 70%;
+        color: #999;
+        text-decoration: line-through;
+    }
 
-.service-img {
-    height: 60%
-}
+    .review {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
 
-.buy-button {
-    background-color: #231f20;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
+    .review img,.review-form img {
+        border-radius: 50%;
+        margin-right: 15px;
+    }
 
-.review-form {
-    margin-top: 20px;
-}
 
-.review-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+    #services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
-.submit-button {
-    background-color: #231f20;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .service-card {
+        flex: 0 1 calc(15%);
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+
+    .service-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        height: 60%
+    }
+
+    .service-card:hover {
+        transform: scale(1.05);
+    }
+
+    .service-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .service-price {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .submit-button,
+    .buy-button {
+        background-color: #231f20;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .buy-button:hover,
+    .submit-button:hover {
+        background-color: #000;
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    .review-input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .review-form {
+        margin-left: 8%;
+    }
+
+    .review-input:focus {
+        border-color: #231f20;
+    }
+
     </style>
 <head>
     <title>Сучасні Інновації</title>
 </head>
-
+<header>
+    <h1>Сучасні Інновації</h1>
+    <img id="logo" src="https://t3.ftcdn.net/jpg/01/39/64/22/360_F_139642282_HTn8M771CvNrsWNMOAkK7IC9tEXd7mqE.jpg" alt="Лого">
+</header>
 <body>
-    <header>
-        <h1>Сучасні Інновації</h1>
-        <img id="logo" src="https://t3.ftcdn.net/jpg/01/39/64/22/360_F_139642282_HTn8M771CvNrsWNMOAkK7IC9tEXd7mqE.jpg" alt="Лого">
-    </header>
-
     <nav>
         <a href="#about">Про нас</a>
         <a href="#services">Послуги</a>
@@ -208,11 +189,14 @@ footer {
         <a href="#contact">Контакти</a>
     </nav>
 
-    <img src="https://gb.ru/blog/wp-content/uploads/2023/02/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D1%84%D0%BE%D0%BD-%D0%B2-html-870x249.jpg.webp" alt="Баннер" style="width:100%">
-
     <section id="about">
         <h2>Опис компанії</h2>
-        <p>"Сучасні Інновації" - це технологічно орієнтована компанія, яка спеціалізується на наданні передових рішень для бізнесу та приватних клієнтів. Наша мета - забезпечити високоякісні послуги та продукти, що відповідають найсучаснішим тенденціям у світі технологій.</p>
+        <p><strong>"Сучасні Інновації"</strong> - це блискуча зірка на технологічному небосхилі, яка втілює у себе силу передових технологій і натхнення безмежного розвитку.</p>
+        <p><strong>Наша компанія</strong> - це не просто технологічний концерн, а натхненна команда винахідників, яка вирушає у світ майбутнього, залишаючи за собою лише сліди передового прогресу та вдосконалення.</p>
+        <p>Ми присвячені пошуку і втіленню передових рішень для бізнесу та приватних клієнтів, щоб створювати нові горизонти можливостей та перетворювати ідеї в реальність.</p>
+        <p><strong>Наша мета</strong> - надавати не просто послуги та продукти, але створювати відмінність, що відповідає найвищим стандартам якості та актуальним тенденціям у світі технологій.</p>
+        <p>Кожен день ми збираємося над новими викликами, метою яких є не просто розв'язання завдань, але й перевершення очікувань наших клієнтів. Ми віримо, що справжнє вдосконалення починається там, де закінчується комфортна зона, і тому завжди прагнемо до інноваційного мислення та креативного підходу до вирішення завдань. </p>
+        <p><strong>Сучасні Інновації</strong> - це не просто технології. Це джерело натхнення, місце, де народжуються ідеї, що змінюють світ. Ми впевнені, що майбутнє належить тим, хто сміливо йде вперед, і ми завжди готові прийняти виклик і стати піонерами технологічного прогресу.</p>
     </section>
 
 
@@ -268,33 +252,37 @@ footer {
     </section>
 <section id="reviews">
     <h2>Відгуки</h2>
-    <div id="existing-reviews">
+    <div>
         <div class="review">
             <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Аватар">
-            <div class="review-content">
+            <div>
                 <p><strong>Іван Іванов</strong></p>
                 <p>Відмінна компанія, виконали роботу вчасно та якісно. Рекомендую!</p>
-                <p class="review-metadata">Оцінка: ★★★★★ | Опубліковано: 2024-01-06</p>
+                <p>Оцінка: ★★★★★ | Опубліковано: 2024-01-06</p>
             </div>
         </div>
         <div class="review">
             <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Аватар">
-            <div class="review-content">
+            <div>
                 <p><strong>Марина Петрова</strong></p>
                 <p>Співпрацюємо із "Сучасні Інновації" вже рік. Дуже задоволені результатами та професіоналізмом команди. Індивідуальний підхід на вищому рівні так ще й знижки віднедавна.</p>
-                <p class="review-metadata">Оцінка: ★★★★☆ | Опубліковано: 2023-09-27</p>
+                <p>Оцінка: ★★★★☆ | Опубліковано: 2023-09-27</p>
             </div>
         </div>
         <div class="review-form">
             <h2>Залишти відгук</h2>
             <form>
                 <input type="text" class="review-input" placeholder="Ім'я">
-            <textarea class="review-input" placeholder="Ваш відгук"></textarea>
-            <button class="submit-button">Відправити</button>
-                </form>
+                <textarea class="review-input" placeholder="Ваш відгук"></textarea>
+                <button class="submit-button">Відправити</button>
+            </form>
         </div>
     </div>
 </section>
+
+<script>
+    // тут будут скрипты логичнo
+</script>
 </body>
 
 <footer id="contact">
