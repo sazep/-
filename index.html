@@ -109,18 +109,22 @@ footer {
 }
 
 .service-card {
-    flex: 0 1 15%; /* ширина карты услуг */
-    border: 0.1em solid #ddd; /* толщина и цвет границы */
-    border-radius: 3%; /* скругление углов */
+    position: relative;
+    flex: 0 1 15%;
+    border: 0.1em solid #ddd;
+    border-radius: 3%;
     padding: 2%;
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .service-card img {
     width: 100%;
-    border-radius: 1%; /* скругление углов */
+    border-radius: 1%;
     margin-bottom: 2%;
-    height: 60%; /* высота изображения */
+    height: 80%;
 }
 
 .service-card:hover {
@@ -132,13 +136,18 @@ footer {
     font-weight: bold;
 }
 
-.service-price {
+.service-price, .buy-price {
+    position: relative;
+    bottom: 4%
+    left: 2%
     font-size: 1.2em; /* размер цены услуги */
     margin-top: 1%;
 }
 
-.submit-button,
 .buy-button {
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
     background-color: #231f20;
     width:25%;
     color: #fff;
@@ -148,7 +157,15 @@ footer {
     cursor: pointer;
     margin-top: 1%;
 }
-
+.submit-button {
+    background-color: #231f20;
+    color: #fff;
+    border-radius: 0.3em; /* радиус скругления кнопки */
+    cursor: pointer;
+    margin-top: 1%;
+    width:8%;
+    height:4%;
+}
 .buy-button:hover,
 .submit-button:hover {
     background-color: #000;
